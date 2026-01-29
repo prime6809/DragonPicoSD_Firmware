@@ -1,0 +1,21 @@
+DragonPicoSD firmware update instructions.
+
+Things you will need :
+	A modern PC running Windows, Linux or MacOS.
+	A USB cable with a micro usb connector on one end.
+	
+Procedure :
+	Power down your Dragon/CoCo and unplug the cartridge.
+	Remove the top cover of the cartridge by removing the 4 crosshead screws on the bottom.**
+	Plug the micro usb end of the connector into the connector on the pi-pico.
+	Plug the other end of the lead into your PC.
+	Hold down the white BOOTSEL button on the pi-pico, keep this held down and press the
+		reset pico button on the DragonPicoSD board.
+	The Pico should show up as a drive in your OS.
+	Copy the dragonpicosd.uf2 file to this drive (drag and drop from GUI, or copy/cp from command line).
+	The pico drive should now disconnect and the firmware will have been updated.
+	Re-connect the DragonPicoSD to your Dragon/CoCo.
+	Power on the system and check the firmware virsion with the helpx command.
+
+**The test units don't have a top case so skip this step....
+	

@@ -1,0 +1,28 @@
+./cmds/cmds_ram.asm:        lda     D_RAM_CTRL              ; make sure we are in ROM mode, ram write enabled
+./cmds/cmds_ram.asm:		sta     D_RAM_CTRL              
+./cmds/cmds_ram.asm:        lda     D_RAM_CTRL              ; enable RAM
+./cmds/cmds_ram.asm:        sta     D_RAM_CTRL              
+./cmds/cmds_ram.asm:		lda		D_RAM_CTRL              ; Get ram control register
+./cmds/cmds_ram.asm:		sta		D_RAM_CTRL              ; Put back.
+./cmds/cmds_cart.asm:		lda     D_RAM_CTRL              ; get current control register
+./cmds/cmds_cart.asm:		sta		D_RAM_CTRL				; set flags
+./interrupt.asm:        ldb     D_RAM_CTRL              ; Get ram control       
+./interrupt.asm:		stb		D_RAM_CTRL
+./interrupt.asm:		stb		D_RAM_CTRL
+./interrupt.asm:        lda     D_RAM_CTRL              ; Disable NMI so we don't get called recursively
+./interrupt.asm:        sta     D_RAM_CTRL
+./interrupt.asm:        lda     D_RAM_CTRL              ; Reenable NMI
+./interrupt.asm:        sta     D_RAM_CTRL              ; update it.
+./interrupt.asm:        lda     D_RAM_CTRL              ; Get RAM control reg
+./interrupt.asm:        sta     D_RAM_CTRL              
+./DragonMMC.asm:;        ldb     D_RAM_CTRL              ; Get ram control reg
+./DragonMMC.asm:;        stb     D_RAM_CTRL              ; Select ROM.
+./DragonMMCdef.asm:DP_D_RAM_CTRL		EQU	    $54			        	; RAM control reg 
+./DragonMMCdef.asm:D_RAM_CTRL		    EQU	    IO_BASE+DP_D_RAM_CTRL   ; RAM control reg
+./DragonMMCdef.asm:; D_RAM_CTRL bit encodings
+./func/config_func.asm:		bsr		GetPlatform				; get the platform by reading D_RAM_CTRL
+./func/config_func.asm:		lda		D_RAM_CTRL              ; Get ram control reg
+./utils/util.asm:		lda     D_RAM_CTRL				; Get RAM control reg
+./utils/util.asm:		sta		D_RAM_CTRL				; set flags
+./utils/util.asm:		lda     D_RAM_CTRL				; Get RAM control reg
+./utils/util.asm:		sta		D_RAM_CTRL				; set flags
